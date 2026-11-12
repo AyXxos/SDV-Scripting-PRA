@@ -6,7 +6,7 @@ set -Eeuo pipefail
 # CONFIGURATION
 # ==========================================
 
-SOURCE_DIR="/var/www"
+SOURCE_DIR="/srv/www/wordpress"
 BACKUP_DIR="/tmp"
 
 REMOTE_USER="adam"
@@ -84,7 +84,7 @@ echo "[2/3] Création de l'archive..."
 
 tar -czpf "$ARCHIVE_PATH" \
     -C / \
-    -- var/www
+    -- srv/www/wordpress
 
 if [ ! -s "$ARCHIVE_PATH" ]; then
     echo "[ERREUR] Archive absente ou vide."
